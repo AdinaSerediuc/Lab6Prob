@@ -37,6 +37,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContBancar.cs" />
+    <Compile Include="ContCurent.cs" />
+    <Compile Include="ContEconomii.cs" />
+    <Compile Include="ContInvestitii.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
