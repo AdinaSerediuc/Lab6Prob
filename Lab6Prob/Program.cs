@@ -37,8 +37,8 @@ dobanzii :
             */
              static void Main()
             {
-                ContBancar cont1 = new ContEconomii("Ion");
-                ContBancar cont2 = new ContInvestitii("Maria");
+                ContBancar cont1 = new ContEconomii("Ion", 0.15);
+                ContBancar cont2 = new ContInvestitii("Maria", 20);
                 ContBancar cont3 = new ContCurent("Alex");
 
                 cont1.Depune(1000);

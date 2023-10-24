@@ -6,8 +6,8 @@ namespace Lab6Prob
 {
     class ContBancar
     {
-        public string nume;
-        public double soldCurent;
+        protected string nume;
+        protected double soldCurent;
 
         public ContBancar(string nume)
         {
@@ -15,7 +15,7 @@ namespace Lab6Prob
             this.soldCurent = 0;
         }
 
-        public void Depune(double suma)
+        public virtual void Depune(double suma)
         {
             soldCurent += suma;
             Console.WriteLine($"Suma de {suma} lei a fost depusa in contul lui {nume}.");

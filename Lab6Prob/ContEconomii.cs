@@ -6,6 +6,24 @@ namespace Lab6Prob
 {
     class ContEconomii : ContBancar
     {
+        private double rataDobanzii;
+
+        public ContEconomii(string nume, double rataDobanzii) : base(nume)
+        {
+            this.rataDobanzii = rataDobanzii;
+        }
+
+        public override void Depune(double suma)
+        {
+            base.Depune(suma);
+            ReactualizeazaSold();
+        }
+
+        private void ReactualizeazaSold()
+        {
+            soldCurent *= (1 + rataDobanzii);
+            Console.WriteLine($"Soldul contului de economii a fost reactualizat la {soldCurent} lei cu rata de dobanda {rataDobanzii * 100}%.");
+        }
 
         public ContEconomii(string nume) : base(nume) { }
 
@@ -14,7 +32,8 @@ namespace Lab6Prob
             if (suma <= soldCurent)
             {
                 base.Retrage(suma);
-                Console.WriteLine($"Suma de {suma} lei a fost retrasa din contul de economii al lui {nume}.");
+                //Console.WriteLine($"Suma de {suma} lei a fost retrasa din contul de economii al lui {nume}.");
+                ReactualizeazaSold();
             }
             else
             {
